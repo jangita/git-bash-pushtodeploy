@@ -1,0 +1,14 @@
+# default: off
+# description: xinetd config file to send tcp requests from a certain port to 
+# git-bash-pushtodeploy.sh
+service git-bash-pushtodeploy
+{
+        disable         = no
+        type            = INTERNAL
+        id              = git-bash-pushtodeploy-time
+        socket_type     = stream
+        protocol        = tcp
+        user            = jangita
+        wait            = yes
+		server	=	/opt/git-bash-pushtodeploy.sh
+}
